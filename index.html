@@ -576,13 +576,22 @@
 	<!-- Footer -->
 	<footer>
 		<p>&copy; 2026 Davide Aquino &mdash; Halifax, NS</p>
-		<div style="margin-top: 1rem;">
-			<img
-				src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdavidvts.github.io&count_bg=%2300b4d8&title_bg=%23172032&icon=eye&icon_color=%23ffffff&title=visitors&edge_flat=true"
-				alt="Visitor counter"
-				style="height: 22px; border-radius: 4px;"
-			/>
+		<div style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.9rem; font-size: 0.8rem; color: var(--grey);">
+			<span style="color: var(--teal); font-size: 0.85rem;">&#9679;</span>
+			<span id="visit-label">Loading visitors...</span>
 		</div>
+		<script>
+			fetch('https://api.counterapi.dev/v1/davidvts-github-io/visits/up')
+				.then(r => r.json())
+				.then(data => {
+					const count = data.count !== undefined ? data.count : data.value;
+					document.getElementById('visit-label').textContent =
+						Number(count).toLocaleString() + ' visitors';
+				})
+				.catch(() => {
+					document.getElementById('visit-label').textContent = 'Visit counter unavailable';
+				});
+		</script>
 	</footer>
 
 </body>
