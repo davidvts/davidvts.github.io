@@ -1,243 +1,582 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Davide Aquino — IT Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Davide Aquino — IT Portfolio</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+	<style>
+		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Wrapper -->
-		<div id="wrapper" class="fade-in">
+		:root {
+			--navy:   #0d1b2a;
+			--navy2:  #132238;
+			--teal:   #00b4d8;
+			--teal2:  #0096c7;
+			--white:  #f0f4f8;
+			--grey:   #8a99b0;
+			--card:   #172032;
+			--border: #1f3050;
+			--radius: 10px;
+		}
 
-			<!-- Intro -->
-			<div id="intro">
-				<h1>Davide Aquino</h1>
-				<p>IT Operations Technician &amp; Digital Transformation Support<br />
-				Government of Nova Scotia &mdash; Halifax, NS</p>
-				<ul class="actions">
-					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Explore</a></li>
-				</ul>
-			</div>
+		html { scroll-behavior: smooth; }
 
-			<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="logo">Davide Aquino</a>
-			</header>
+		body {
+			background: var(--navy);
+			color: var(--white);
+			font-family: 'Inter', sans-serif;
+			font-size: 16px;
+			line-height: 1.7;
+		}
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="index.html">Portfolio</a></li>
-				</ul>
-				<ul class="icons">
-					<li><a href="https://linkedin.com/in/daquino1" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/davidvts" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-				</ul>
-			</nav>
+		/* ── HEADER ── */
+		header {
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			background: rgba(13,27,42,0.92);
+			backdrop-filter: blur(10px);
+			border-bottom: 1px solid var(--border);
+			padding: 0 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 64px;
+		}
 
-			<!-- Main -->
-			<div id="main">
+		.logo {
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 700;
+			font-size: 1.1rem;
+			color: var(--white);
+			text-decoration: none;
+			letter-spacing: 0.02em;
+		}
 
-				<!-- Featured: Professional Summary -->
-				<article class="post featured">
-					<header class="major">
-						<span class="date">Halifax, Nova Scotia</span>
-						<h2><a href="#">IT Operations Technician<br />
-						Digital Transformation Support</a></h2>
-						<p>Hands-on IT professional with experience supporting regulated public-sector environments,
-						currently contributing to central office digital transformation initiatives at the
-						Government of Nova Scotia. Background spans endpoint support, LAN access,
-						audio/visual systems, and asset lifecycle management — with growing exposure to
-						enterprise-level coordination and modernization projects. Known for reliability,
-						discretion, and the ability to support mission-critical operations in
-						low-tolerance-for-failure settings.</p>
-					</header>
-					<ul class="actions special">
-						<li><a href="https://linkedin.com/in/daquino1" class="button large" target="_blank">Connect on LinkedIn</a></li>
-					</ul>
-				</article>
+		.logo span { color: var(--teal); }
 
-				<!-- Posts -->
-				<section class="posts">
+		nav a {
+			color: var(--grey);
+			text-decoration: none;
+			font-size: 0.875rem;
+			font-weight: 500;
+			margin-left: 2rem;
+			transition: color 0.2s;
+		}
 
-					<!-- Digital Transformation -->
-					<article>
-						<header>
-							<span class="date">Current Focus &mdash; Gov. of Nova Scotia</span>
-							<h2><a href="#">Central Office<br />
-							Digital Transformation</a></h2>
-						</header>
-						<p>Supporting enterprise-level digital transformation initiatives at the Government of Nova Scotia's
-						central office. Coordinating technology rollouts across departments, contributing to process
-						modernization, documentation, and user-readiness. Ensuring technology changes align with
-						operational and compliance requirements in a justice-adjacent environment.</p>
-						<ul class="actions special">
-							<li><a href="https://linkedin.com/in/daquino1" class="button" target="_blank">View on LinkedIn</a></li>
-						</ul>
-					</article>
+		nav a:hover { color: var(--teal); }
 
-					<!-- Departmental IT Support -->
-					<article>
-						<header>
-							<span class="date">Ongoing &mdash; Dept. of Justice</span>
-							<h2><a href="#">Departmental IT<br />
-							Operations &amp; Support</a></h2>
-						</header>
-						<p>Primary IT support resource for a ~70-user department in a fast-paced, mission-critical
-						environment. Frontline troubleshooting for hardware, software, LAN, and peripherals.
-						Managing IT asset inventory and lifecycle, supporting audio/visual and digital recording
-						systems used in court-adjacent settings, with strict adherence to security and privacy standards.</p>
-						<ul class="actions special">
-							<li><a href="https://linkedin.com/in/daquino1" class="button" target="_blank">View on LinkedIn</a></li>
-						</ul>
-					</article>
+		/* ── HERO ── */
+		.hero {
+			min-height: 90vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			padding: 6rem 2rem 4rem;
+			max-width: 900px;
+			margin: 0 auto;
+		}
 
-					<!-- Core Skills -->
-					<article>
-						<header>
-							<span class="date">Skills</span>
-							<h2><a href="#">Core Technical<br />
-							Competencies</a></h2>
-						</header>
-						<p>
-							&bull; IT Operations &amp; User Support<br />
-							&bull; Digital Transformation Support<br />
-							&bull; Endpoint &amp; Hardware Lifecycle Management<br />
-							&bull; LAN Access &amp; Connectivity Troubleshooting<br />
-							&bull; Audio/Visual &amp; Digital Recording Systems<br />
-							&bull; Incident Response &amp; Issue Escalation<br />
-							&bull; Regulated / Confidential Environments<br />
-							&bull; Documentation &amp; Process Improvement<br />
-							&bull; Cross-Team Coordination
-						</p>
-						<ul class="actions special">
-							<li><a href="#footer" class="button scrolly">Get in Touch</a></li>
-						</ul>
-					</article>
+		.hero-tag {
+			display: inline-block;
+			background: rgba(0,180,216,0.12);
+			color: var(--teal);
+			border: 1px solid rgba(0,180,216,0.3);
+			border-radius: 100px;
+			padding: 0.3rem 1rem;
+			font-size: 0.8rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			margin-bottom: 1.5rem;
+		}
 
-					<!-- Education -->
-					<article>
-						<header>
-							<span class="date">Education &mdash; Seneca College, Toronto ON</span>
-							<h2><a href="#">Advanced Diploma<br />
-							Computer Engineering Technology</a></h2>
-						</header>
-						<p>Program covered hardware &amp; software troubleshooting, networking fundamentals,
-						systems support and maintenance, and audio/visual infrastructure support —
-						providing a solid technical foundation for a career in IT operations and
-						enterprise environments.</p>
-						<ul class="actions special">
-							<li><a href="https://linkedin.com/in/daquino1" class="button" target="_blank">View LinkedIn</a></li>
-						</ul>
-					</article>
+		.hero h1 {
+			font-family: 'Space Grotesk', sans-serif;
+			font-size: clamp(2.8rem, 6vw, 5rem);
+			font-weight: 700;
+			line-height: 1.1;
+			letter-spacing: -0.02em;
+			margin-bottom: 1.25rem;
+		}
 
-					<!-- Regulated Environments -->
-					<article>
-						<header>
-							<span class="date">Professional Strength</span>
-							<h2><a href="#">Regulated &amp;<br />
-							Confidential Environments</a></h2>
-						</header>
-						<p>Trusted to operate in high-stakes, confidential settings within the Department of Justice.
-						Comfortable working independently or as part of multi-disciplinary teams, remaining calm
-						during system outages or time-sensitive support situations. Adaptable to fluctuating
-						workloads and project-based cycles.</p>
-						<ul class="actions special">
-							<li><a href="#footer" class="button scrolly">Contact Me</a></li>
-						</ul>
-					</article>
+		.hero h1 span { color: var(--teal); }
 
-					<!-- Additional Strengths -->
-					<article>
-						<header>
-							<span class="date">What I Bring</span>
-							<h2><a href="#">Reliability,<br />
-							Discretion &amp; Adaptability</a></h2>
-						</header>
-						<p>Known for calm, methodical problem-solving during outages and time-sensitive incidents.
-						Experienced operating independently with minimal oversight in high-accountability environments.
-						Equally effective collaborating within cross-functional, multi-disciplinary teams on
-						modernization and transformation projects.</p>
-						<ul class="actions special">
-							<li><a href="https://linkedin.com/in/daquino1" class="button" target="_blank">View Full Profile</a></li>
-						</ul>
-					</article>
+		.hero p {
+			font-size: 1.15rem;
+			color: var(--grey);
+			max-width: 600px;
+			margin-bottom: 2.5rem;
+			line-height: 1.8;
+		}
 
-				</section>
+		.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-			</div>
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.75rem 1.75rem;
+			border-radius: var(--radius);
+			font-weight: 600;
+			font-size: 0.9rem;
+			text-decoration: none;
+			transition: all 0.2s;
+			cursor: pointer;
+		}
 
-			<!-- Footer -->
-			<footer id="footer">
-				<section id="contact">
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" />
-							</div>
-							<div class="field">
-								<label for="email">Email</label>
-								<input type="text" name="email" id="email" />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="3"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" /></li>
-						</ul>
-					</form>
-				</section>
-				<section class="split contact">
-					<section class="alt">
-						<h3>Location</h3>
-						<p>Halifax, Nova Scotia, Canada</p>
-					</section>
-					<section>
-						
-					</section>
-					<section>
-						<h3>Email</h3>
-						<p><a href="mailto:davideaquino@gmail.com">davideaquino@gmail.com</a></p>
-					</section>
-					<section>
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a href="https://linkedin.com/in/daquino1" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/davidvts" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-						</ul>
-					</section>
-				</section>
-			</footer>
+		.btn-primary {
+			background: var(--teal);
+			color: var(--navy);
+		}
 
-			<!-- Copyright -->
-			<div id="copyright">
-				<ul>
-					<li>&copy; Davide Aquino</li>
-					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
+		.btn-primary:hover { background: var(--teal2); transform: translateY(-1px); }
 
+		.btn-outline {
+			border: 1px solid var(--border);
+			color: var(--white);
+			background: transparent;
+		}
+
+		.btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+		/* ── SECTIONS ── */
+		section {
+			padding: 5rem 2rem;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.section-label {
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--teal);
+			margin-bottom: 0.75rem;
+		}
+
+		h2 {
+			font-family: 'Space Grotesk', sans-serif;
+			font-size: clamp(1.6rem, 3vw, 2.2rem);
+			font-weight: 700;
+			margin-bottom: 2.5rem;
+			letter-spacing: -0.01em;
+		}
+
+		.divider {
+			border: none;
+			border-top: 1px solid var(--border);
+			margin: 0;
+		}
+
+		/* ── EXPERIENCE ── */
+		.experience-item {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+			padding: 2rem;
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			margin-bottom: 1.25rem;
+			transition: border-color 0.2s;
+		}
+
+		.experience-item:hover { border-color: var(--teal); }
+
+		.exp-top {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.exp-title {
+			font-family: 'Space Grotesk', sans-serif;
+			font-size: 1.1rem;
+			font-weight: 700;
+			color: var(--white);
+		}
+
+		.exp-badge {
+			background: rgba(0,180,216,0.12);
+			color: var(--teal);
+			border: 1px solid rgba(0,180,216,0.25);
+			border-radius: 100px;
+			padding: 0.2rem 0.75rem;
+			font-size: 0.75rem;
+			font-weight: 600;
+			white-space: nowrap;
+		}
+
+		.exp-org {
+			color: var(--teal);
+			font-size: 0.875rem;
+			font-weight: 600;
+			margin-bottom: 0.75rem;
+		}
+
+		.exp-desc {
+			color: var(--grey);
+			font-size: 0.925rem;
+			line-height: 1.75;
+		}
+
+		.exp-bullets {
+			margin-top: 0.75rem;
+			padding-left: 0;
+			list-style: none;
+		}
+
+		.exp-bullets li {
+			color: var(--grey);
+			font-size: 0.925rem;
+			padding: 0.3rem 0;
+			padding-left: 1.25rem;
+			position: relative;
+		}
+
+		.exp-bullets li::before {
+			content: '›';
+			position: absolute;
+			left: 0;
+			color: var(--teal);
+			font-weight: 700;
+		}
+
+		/* ── SKILLS ── */
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+			gap: 1rem;
+		}
+
+		.skill-card {
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 1.25rem 1.5rem;
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+			font-size: 0.9rem;
+			font-weight: 500;
+			color: var(--white);
+			transition: border-color 0.2s, transform 0.2s;
+		}
+
+		.skill-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+
+		.skill-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--teal);
+			flex-shrink: 0;
+		}
+
+		/* ── EDUCATION ── */
+		.edu-card {
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			gap: 1rem;
+			transition: border-color 0.2s;
+		}
+
+		.edu-card:hover { border-color: var(--teal); }
+
+		.edu-degree {
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 700;
+			font-size: 1.05rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.edu-school {
+			color: var(--teal);
+			font-size: 0.9rem;
+			font-weight: 600;
+			margin-bottom: 0.75rem;
+		}
+
+		.edu-detail {
+			color: var(--grey);
+			font-size: 0.875rem;
+		}
+
+		/* ── CONTACT ── */
+		.contact-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+		}
+
+		.contact-info { display: flex; flex-direction: column; gap: 1rem; }
+
+		.contact-item {
+			display: flex;
+			flex-direction: column;
+			gap: 0.2rem;
+		}
+
+		.contact-label {
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--grey);
+		}
+
+		.contact-value {
+			color: var(--white);
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.95rem;
+			transition: color 0.2s;
+		}
+
+		.contact-value:hover { color: var(--teal); }
+
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.contact-form input,
+		.contact-form textarea {
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 0.75rem 1rem;
+			color: var(--white);
+			font-family: 'Inter', sans-serif;
+			font-size: 0.9rem;
+			width: 100%;
+			transition: border-color 0.2s;
+		}
+
+		.contact-form input:focus,
+		.contact-form textarea:focus {
+			outline: none;
+			border-color: var(--teal);
+		}
+
+		.contact-form textarea { resize: vertical; min-height: 120px; }
+
+		.contact-form input::placeholder,
+		.contact-form textarea::placeholder { color: var(--grey); }
+
+		/* ── FOOTER ── */
+		footer {
+			border-top: 1px solid var(--border);
+			padding: 2rem;
+			text-align: center;
+			color: var(--grey);
+			font-size: 0.85rem;
+		}
+
+		footer a { color: var(--teal); text-decoration: none; }
+
+		/* ── SOCIAL ICONS ── */
+		.social-links {
+			display: flex;
+			gap: 0.75rem;
+			margin-top: 1rem;
+		}
+
+		.social-link {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 42px;
+			height: 42px;
+			border-radius: var(--radius);
+			border: 1px solid var(--border);
+			color: var(--grey);
+			text-decoration: none;
+			font-size: 1rem;
+			transition: all 0.2s;
+		}
+
+		.social-link:hover {
+			border-color: var(--teal);
+			color: var(--teal);
+		}
+
+		/* ── RESPONSIVE ── */
+		@media (max-width: 640px) {
+			nav { display: none; }
+			.contact-grid { grid-template-columns: 1fr; }
+			.hero { padding-top: 4rem; }
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Header -->
+	<header>
+		<a href="#" class="logo">D<span>.</span>Aquino</a>
+		<nav>
+			<a href="#about">About</a>
+			<a href="#experience">Experience</a>
+			<a href="#skills">Skills</a>
+			<a href="#education">Education</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<div class="hero">
+		<div class="hero-tag">Open to new opportunities</div>
+		<h1>IT Operations &amp;<br /><span>Digital Transformation</span></h1>
+		<p>Government IT technician with hands-on experience in endpoint support, LAN access,
+		A/V systems, and enterprise-level digital transformation — currently based in Halifax, Nova Scotia.</p>
+		<div class="hero-btns">
+			<a href="https://linkedin.com/in/daquino1" class="btn btn-primary" target="_blank">Connect on LinkedIn</a>
+			<a href="#contact" class="btn btn-outline">Get in Touch</a>
 		</div>
+	</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<hr class="divider" />
 
-	</body>
+	<!-- About -->
+	<section id="about">
+		<div class="section-label">About</div>
+		<h2>Professional Summary</h2>
+		<p style="color: var(--grey); font-size: 1.05rem; line-height: 1.85; max-width: 720px;">
+			IT Operations Technician with hands-on experience supporting regulated public-sector environments,
+			currently contributing to central office digital transformation initiatives at the Government of Nova Scotia.
+			Background spans endpoint support, LAN access, audio/visual systems, and asset lifecycle management —
+			with growing exposure to enterprise-level coordination and modernization projects.
+			Known for reliability, discretion, and the ability to support mission-critical operations
+			in low-tolerance-for-failure settings.
+		</p>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Experience -->
+	<section id="experience">
+		<div class="section-label">Experience</div>
+		<h2>Professional Experience</h2>
+
+		<div class="experience-item">
+			<div class="exp-top">
+				<div class="exp-title">Information Processing Technician</div>
+				<div class="exp-badge">Present</div>
+			</div>
+			<div class="exp-org">Government of Nova Scotia — Department of Justice, Halifax NS</div>
+
+			<div class="exp-title" style="font-size:0.95rem; margin-bottom:0.5rem; color: var(--grey); font-weight:600;">
+				Central Office – Digital Transformation Support
+				<span style="font-size:0.8rem; font-weight:400; margin-left:0.5rem;">(Most recent 2 months)</span>
+			</div>
+			<ul class="exp-bullets">
+				<li>Supporting digital transformation initiatives at the central-office level, assisting with coordination and rollout of technology projects across departments.</li>
+				<li>Contributing to process modernization efforts including system updates, documentation, and user-readiness support.</li>
+				<li>Collaborating with internal stakeholders to ensure technology changes align with operational and compliance requirements.</li>
+			</ul>
+
+			<div class="exp-title" style="font-size:0.95rem; margin-top:1.25rem; margin-bottom:0.5rem; color: var(--grey); font-weight:600;">
+				Departmental IT Operations &amp; User Support
+			</div>
+			<ul class="exp-bullets">
+				<li>Primary IT support resource for a ~70-user department in a fast-paced, mission-critical environment.</li>
+				<li>Frontline troubleshooting for hardware, software, LAN access, and peripheral systems — ensuring minimal service disruption.</li>
+				<li>Managed IT asset inventory and lifecycle including deployment coordination, upgrades, and replacement planning.</li>
+				<li>Supported audio/visual and digital recording systems used in court-adjacent environments where reliability and confidentiality are critical.</li>
+				<li>Maintained strict adherence to security, privacy, and professional conduct standards required in justice settings.</li>
+				<li>Documented recurring issues, resolutions, and configuration details to improve response consistency and knowledge sharing.</li>
+			</ul>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Skills -->
+	<section id="skills">
+		<div class="section-label">Skills</div>
+		<h2>Core Competencies</h2>
+		<div class="skills-grid">
+			<div class="skill-card"><div class="skill-dot"></div>IT Operations &amp; User Support</div>
+			<div class="skill-card"><div class="skill-dot"></div>Digital Transformation Support</div>
+			<div class="skill-card"><div class="skill-dot"></div>Endpoint &amp; Hardware Lifecycle</div>
+			<div class="skill-card"><div class="skill-dot"></div>LAN &amp; Connectivity Troubleshooting</div>
+			<div class="skill-card"><div class="skill-dot"></div>Audio/Visual &amp; Recording Systems</div>
+			<div class="skill-card"><div class="skill-dot"></div>Incident Response &amp; Escalation</div>
+			<div class="skill-card"><div class="skill-dot"></div>Regulated &amp; Confidential Environments</div>
+			<div class="skill-card"><div class="skill-dot"></div>Documentation &amp; Process Improvement</div>
+			<div class="skill-card"><div class="skill-dot"></div>Cross-Team Coordination</div>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Education -->
+	<section id="education">
+		<div class="section-label">Education</div>
+		<h2>Academic Background</h2>
+		<div class="edu-card">
+			<div>
+				<div class="edu-degree">Advanced Diploma — Computer Engineering Technology</div>
+				<div class="edu-school">Seneca College &mdash; Toronto, ON</div>
+				<div class="edu-detail">
+					Hardware &amp; software troubleshooting &nbsp;·&nbsp; Networking fundamentals<br />
+					Systems support &amp; maintenance &nbsp;·&nbsp; Audio/visual &amp; infrastructure support
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Contact -->
+	<section id="contact">
+		<div class="section-label">Contact</div>
+		<h2>Get in Touch</h2>
+		<div class="contact-grid">
+			<div class="contact-info">
+				<div class="contact-item">
+					<span class="contact-label">Location</span>
+					<span class="contact-value">Halifax, Nova Scotia, Canada</span>
+				</div>
+				<div class="contact-item">
+					<span class="contact-label">Email</span>
+					<a href="mailto:davideaquino@gmail.com" class="contact-value">davideaquino@gmail.com</a>
+				</div>
+				<div class="contact-item">
+					<span class="contact-label">Connect</span>
+					<div class="social-links">
+						<a href="https://linkedin.com/in/daquino1" class="social-link" target="_blank" title="LinkedIn">in</a>
+						<a href="https://github.com/davidvts" class="social-link" target="_blank" title="GitHub">gh</a>
+					</div>
+				</div>
+			</div>
+			<form class="contact-form" onsubmit="return false;">
+				<input type="text" placeholder="Your name" />
+				<input type="email" placeholder="Your email" />
+				<textarea placeholder="Your message"></textarea>
+				<button type="submit" class="btn btn-primary" style="border:none; justify-content:center;">Send Message</button>
+			</form>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer>
+		<p>&copy; 2026 Davide Aquino &mdash; Halifax, NS &mdash; Design by <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+	</footer>
+
+</body>
 </html>
